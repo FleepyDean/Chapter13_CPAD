@@ -29,6 +29,10 @@ final class Database
             $options[PDO::MYSQL_ATTR_SSL_CA] = $_ENV['DB_SSL_CA']; 
             $options[PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT] = true; 
         } elseif (($_ENV['DB_SSL_MODE'] ?? '') === 'require') { 
+            $caFile = '/etc/ssl/certs/ca-certificates.crt'; 
+            if (file_exists($caFile)) { 
+                $options[PDO::MYSQL_ATTR_SSL_CA] = $caFile; 
+            } 
             $options[PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT] = false; 
         } 
 

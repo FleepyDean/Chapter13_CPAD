@@ -3,10 +3,12 @@ FROM php:8.2-apache
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
+    ca-certificates \
     libzip-dev \
     libonig-dev \
     default-libmysqlclient-dev \
     && docker-php-ext-install pdo pdo_mysql mbstring zip \
+    && update-ca-certificates \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
