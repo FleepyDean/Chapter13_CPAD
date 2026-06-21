@@ -1,0 +1,22 @@
+# Environment variables
+.env
+
+# Dependencies
+vendor/
+books-frontend/node_modules/
+
+# Build output
+books-frontend/dist/
+
+# Cache and logs
+var/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.swp
+*.swo

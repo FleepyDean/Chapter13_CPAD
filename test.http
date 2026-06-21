@@ -1,0 +1,16 @@
+### Test 3 — Create
+POST http://localhost:8000/api/books 
+Content-Type: application/json 
+  
+{ "title":"Refactoring", "author":"Martin Fowler", "year":2018 } 
+  
+### Test 4 — partial update
+PUT http://localhost:8000/api/books/1
+Content-Type: application/json
+
+{ 
+  "genre": "Software Craftsmanship" 
+}
+
+### Test 5 — delete
+DELETE http://localhost:8000/api/books/1
